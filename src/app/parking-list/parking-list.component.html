@@ -20,7 +20,7 @@
       <td>{{ parking.fields.address }}</td>
       <td>{{ parking.fields.contactinfo }}</td>
       <td>
-        <i *ngIf="parking.fields.open" class="bi-check2 font-weight-bold"></i>
+        <i *ngIf="parking.fields.open === 'True'" class="bi-check2 font-weight-bold"></i>
       </td>
       <td
         class="text-success"
