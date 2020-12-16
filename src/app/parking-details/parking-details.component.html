@@ -1,0 +1,37 @@
+<div *ngIf="parking$ | async as parking">
+  <h2 class="mt-4">{{ parking.fields.name }}</h2>
+  <div class="container-fluid p-0">
+    <div class="row">
+      <div class="col-4 d-flex">
+        <div class="card flex-grow-1">
+          <div class="card-header">Contact info</div>
+          <div class="card-body">
+            <p class="mb-0">{{ parking.fields.address }}</p>
+            <p>{{ parking.fields.contactinfo }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 d-flex">
+        <div class="card flex-grow-1">
+          <div class="card-header">Total capacity</div>
+          <div class="card-body">
+            <p class="h1">{{ parking.fields.totalcapacity }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-4 d-flex">
+        <div class="card flex-grow-1">
+          <div class="card-header">Available capacity</div>
+          <div class="card-body flex-grow-1">
+            <p
+              class="h1 text-success"
+              [class.text-danger]="parking.fields.availablecapacity < 500"
+            >
+              {{ parking.fields.availablecapacity }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

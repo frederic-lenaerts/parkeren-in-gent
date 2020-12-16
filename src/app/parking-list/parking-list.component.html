@@ -1,0 +1,33 @@
+<h2 class="mt-4">Parkeergelegenheid in de Stad Gent</h2>
+
+<table class="table table-hover bg-white">
+  <thead>
+    <tr>
+      <th>Naam</th>
+      <th>Adres</th>
+      <th>Contact</th>
+      <th>Open</th>
+      <th>Aantal plaatsen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let parking of parkings$ | async"
+      class="cursor-pointer"
+      (click)="goToDetails(parking.recordid)"
+    >
+      <td>{{ parking.fields.name }}</td>
+      <td>{{ parking.fields.address }}</td>
+      <td>{{ parking.fields.contactinfo }}</td>
+      <td>
+        <i *ngIf="parking.fields.open" class="bi-check2 font-weight-bold"></i>
+      </td>
+      <td
+        class="text-success"
+        [class.text-danger]="parking.fields.availablecapacity < 500"
+      >
+        {{ parking.fields.availablecapacity }}
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+body {
+  background-color: #e6e2e4;
+}
+
+.bg-orange {
+  background-color: #fc4508;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+[class^="bi-"]::before,
+[class*="bi-"]::before {
+  font-weight: inherit !important;
+}
