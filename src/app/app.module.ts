@@ -13,7 +13,7 @@ import { ParkingListComponent } from './parking-list/parking-list.component';
     ParkingListComponent,
     ParkingDetailsComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
